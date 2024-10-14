@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/go-chi/chi"
-	"github.com/tanveerprottoy/basic-go-server/internal/pkg/constant"
-	"github.com/tanveerprottoy/basic-go-server/internal/server/resource"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/pkg/constant"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/server/resource"
 )
 
 func RegisterUserRoutes(router *Router, version string, handler *resource.Handler) {

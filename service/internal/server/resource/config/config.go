@@ -3,7 +3,7 @@ package resourcecfg
 import (
 	"github.com/go-playground/validator/v10"
 	"github.com/jmoiron/sqlx"
-	"github.com/tanveerprottoy/basic-go-server/internal/server/resource"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/server/resource"
 )
 
 // Config holds the components of the current package

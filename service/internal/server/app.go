@@ -5,11 +5,11 @@ import (
 	"net/http"
 
 	"github.com/go-playground/validator/v10"
-	"github.com/tanveerprottoy/basic-go-server/internal/pkg/constant"
-	"github.com/tanveerprottoy/basic-go-server/internal/pkg/router"
-	resourcecfg "github.com/tanveerprottoy/basic-go-server/internal/server/resource/config"
-	"github.com/tanveerprottoy/basic-go-server/pkg/data/sqlxpkg"
-	"github.com/tanveerprottoy/basic-go-server/pkg/validatorpkg"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/pkg/router"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/pkg/server/constant"
+	resourcecfg "github.com/tanveerprottoy/jenkins-pipeline/service/internal/server/resource/config"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/data/sqlxpkg"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/validatorpkg"
 )
 
 // App struct

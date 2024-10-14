@@ -1,26 +1,14 @@
 package resource
 
 import (
+	"context"
 	"testing"
-
-	"github.com/tanveerprottoy/basic-go-server/pkg/data/sqlxpkg"
 )
 
-type TestService struct {
-	service *Service
-}
-
-func NewTestService() *Service {
-	dbClient := sqlxpkg.GetInstance()
-	s := new(Service)
-	s.repository = NewRepository(dbClient.DB)
-	return s
-}
-
-func TestAll(t *testing.T) {
+func TestService(t *testing.T) {
 	// test service
-	s := NewTestService()
-	e, err := s.readOneInternal("1")
+	s := NewService()
+	e, err := s.GetData(context.Background())
 	if err != nil {
 		t.Fatalf("DoSomething() returned error: %s", err)
 	}

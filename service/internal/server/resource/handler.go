@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/tanveerprottoy/basic-go-server/internal/pkg/constant"
-	"github.com/tanveerprottoy/basic-go-server/pkg/adapter"
-	"github.com/tanveerprottoy/basic-go-server/pkg/httppkg"
-	"github.com/tanveerprottoy/basic-go-server/pkg/jsonpkg"
-	"github.com/tanveerprottoy/basic-go-server/pkg/response"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/pkg/constant"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/adapter"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/httppkg"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/jsonpkg"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/response"
 
 	"github.com/go-playground/validator/v10"
 )

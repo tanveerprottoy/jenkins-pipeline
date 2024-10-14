@@ -1,6 +1,6 @@
-module github.com/tanveerprottoy/basic-go-server
+module github.com/tanveerprottoy/jenkins-pipeline/service
 
-go 1.20
+go 1.22
 
 require (
 	github.com/go-chi/chi v1.5.4

@@ -4,7 +4,7 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 
-	middlewarepkg "github.com/tanveerprottoy/basic-go-server/pkg/middleware"
+	middlewarepkg "github.com/tanveerprottoy/jenkins-pipeline/service/pkg/middleware"
 )
 
 // Router struct

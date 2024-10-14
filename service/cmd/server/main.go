@@ -1,6 +1,6 @@
 package main
 
-import "github.com/tanveerprottoy/basic-go-server/internal/server"
+import "github.com/tanveerprottoy/jenkins-pipeline/service/internal/server"
 
 // entry point
 func main() {
