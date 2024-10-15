@@ -2,20 +2,15 @@ package router
 
 import (
 	"github.com/go-chi/chi"
-	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/pkg/constant"
 	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/server/resource"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/constant"
 )
 
 func RegisterUserRoutes(router *Router, version string, handler *resource.Handler) {
 	router.Mux.Route(
 		constant.ApiPattern+version+constant.ResourcesPattern,
 		func(r chi.Router) {
-			r.Get(constant.RootPattern, handler.ReadMany)
-			r.Get(constant.RootPattern+"get-basic", handler.GetBasicData)
-			r.Get(constant.RootPattern+"{id}", handler.ReadOne)
-			r.Post(constant.RootPattern, handler.Create)
-			r.Patch(constant.RootPattern+"{id}", handler.Update)
-			r.Delete(constant.RootPattern+"{id}", handler.Delete)
+			r.Get("/", handler.GetData)
 		},
 	)
 }

@@ -5,13 +5,11 @@ WORKDIR /app
 
 COPY go.mod go.sum ./
 
-COPY ./config/container.env ./.env
-
 RUN go mod download
 
 COPY ./ ./
 
-RUN go build -o ./app ./cmd/basicserver/main.go
+RUN go build -o ./app ./cmd/server/main.go
 
 # deploy stage
 FROM gcr.io/distroless/base-debian11
@@ -26,4 +24,3 @@ EXPOSE 8080
 USER nonroot:nonroot
 
 ENTRYPOINT ["./app"]
-

@@ -3,8 +3,7 @@ package router
 import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
-
-	middlewarepkg "github.com/tanveerprottoy/jenkins-pipeline/service/pkg/middleware"
+	middlewareext "github.com/tanveerprottoy/jenkins-pipeline/service/pkg/middleware"
 )
 
 // Router struct
@@ -29,7 +28,7 @@ func (r *Router) registerGlobalMiddlewares() {
 		middleware.Recoverer,
 
 		// custom global middlewares
-		middlewarepkg.JSONContentTypeMiddleWare,
-		middlewarepkg.CORSEnableMiddleWare,
+		middlewareext.JSONContentTypeMiddleWare,
+		middlewareext.CORSEnableMiddleWare,
 	)
 }

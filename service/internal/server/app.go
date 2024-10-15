@@ -4,20 +4,15 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/go-playground/validator/v10"
-	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/pkg/router"
-	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/pkg/server/constant"
 	resourcecfg "github.com/tanveerprottoy/jenkins-pipeline/service/internal/server/resource/config"
-	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/data/sqlxpkg"
-	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/validatorpkg"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/internal/server/router"
+	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/constant"
 )
 
 // App struct
 type App struct {
-	DBClient    *sqlxpkg.Client
 	router      *router.Router
 	resourceCfg *resourcecfg.Config
-	Validate    *validator.Validate
 }
 
 func NewApp() *App {
@@ -26,30 +21,19 @@ func NewApp() *App {
 	return a
 }
 
-func (a *App) initDB() {
-	a.DBClient = sqlxpkg.GetInstance()
-}
-
 func (a *App) initModules() {
-	a.resourceCfg = resourcecfg.NewConfig(a.DBClient.DB, a.Validate)
+	a.resourceCfg = resourcecfg.NewConfig()
 }
 
 func (a *App) initModuleRouters() {
 	router.RegisterUserRoutes(a.router, constant.V1, a.resourceCfg.Handler)
 }
 
-func (a *App) initValidators() {
-	a.Validate = validator.New()
-	_ = a.Validate.RegisterValidation("notempty", validatorpkg.NotEmpty)
-}
-
 // Init app
 func (a *App) initComponents() {
-	a.initDB()
 	a.router = router.NewRouter()
 	a.initModules()
 	a.initModuleRouters()
-	a.initValidators()
 }
 
 // Run app
