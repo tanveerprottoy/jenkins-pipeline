@@ -26,7 +26,7 @@ func (a *App) initModules() {
 }
 
 func (a *App) initModuleRouters() {
-	router.RegisterUserRoutes(a.router, constant.V1, a.resourceCfg.Handler)
+	router.RegisterResourceRoutes(a.router, constant.V1, a.resourceCfg.Handler)
 }
 
 // Init app

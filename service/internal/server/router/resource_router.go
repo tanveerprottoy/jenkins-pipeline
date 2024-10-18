@@ -6,7 +6,8 @@ import (
 	"github.com/tanveerprottoy/jenkins-pipeline/service/pkg/constant"
 )
 
-func RegisterUserRoutes(router *Router, version string, handler *resource.Handler) {
+// RegisterResourceRoutes registers resource routes
+func RegisterResourceRoutes(router *Router, version string, handler *resource.Handler) {
 	router.Mux.Route(
 		constant.ApiPattern+version+constant.ResourcesPattern,
 		func(r chi.Router) {
